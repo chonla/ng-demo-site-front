@@ -1,8 +1,11 @@
 <div class="card post-entry">
   <div class="card-body">
     <div class="card-title">
-      <h2>{{ post.title }}</h2>
+      <h2>
+        <a [routerLink]="['post', post.id]">{{ post.title }}</a>
+      </h2>
     </div>
-    <div class="card-text" [innerHTML]="post.body | restoreHtml"></div>
+    <div class="card-text post-author">เขียนโดย {{ post.author }}</div>
+    <div class="card-text post-body">{{ post.body | excerpt : 200 : true }}</div>
   </div>
 </div>

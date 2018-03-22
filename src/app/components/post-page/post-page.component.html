@@ -1,0 +1,9 @@
+<a [routerLink]="['']">
+  <h1>ตัวอย่าง</h1>
+</a>
+<div class="container post-content" *ngIf="doc">
+  <h2>{{ doc.title }}</h2>
+
+  <div class="post-author">เขียนโดย {{ doc.author }}</div>
+  <div class="post-body" [innerHTML]="doc.body | restoreHtml"></div>
+</div>
